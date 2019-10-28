@@ -1,18 +1,18 @@
 
 <h1>Bienvenue</h1>
-<p>
 
 
-  <% @gossips.each do |gossip| %>
 
-        <p>
 
-          <a href = <%= "/gossips/" + gossip.id.to_s %> > <%= "Gossip n°" + gossip.id.to_s %></a><br/>
 
-          <%= gossip.title %><br/>
+<% @gossips.each do |gossip| %>
+  <div class="card col-4">
+    <div class="card-header"><%= gossip.user.first_name %></div>
+    <div class="card-body">
+      <%= gossip.title %><br/>
 
-          <%= gossip.user.first_name %>
+      <a href = <%= "/gossips/" + gossip.id.to_s %> > <%= "Gossip n°" + gossip.id.to_s %></a><br/>
+    </div>
 
-        </p>
-
+  </div>
   <% end %>
